@@ -1,0 +1,13 @@
+name: Apendiendo github actions
+run-name: Hola mundo en Github Actions!
+on: [push]
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: Definicion de variable
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+      - name: correr script
+        run: node hola-mundo.js
